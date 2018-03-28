@@ -1,0 +1,13 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  sleep-for:
+    lang: node
+    handler: ./sleep-for
+    image: alexellis2/sleep-for
+    environment:
+      read_timeout: 20s
+      write_timeout: 20s
+      timeout_secs: "5000"
